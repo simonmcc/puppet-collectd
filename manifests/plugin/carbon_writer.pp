@@ -23,7 +23,7 @@ class collectd::plugin::carbon_writer (
 
   file { '/opt/collectd-plugins/carbon_writer.py':
     ensure  => present,
-    source  => 'puppet://modules/collectd/carbon_writer.py',
+    source  => 'puppet:///modules/collectd/carbon_writer.py',
     require => File['/opt/collectd-plugins'],
   }
 
