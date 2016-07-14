@@ -1,5 +1,5 @@
 # https://github.com/indygreg/collectd-carbon
-class collectd::plugin::write_graphite (
+class collectd::plugin::carbon_writer (
   $ensure            = present,
   $graphitehost      = 'localhost',
   $graphiteport      = 2003,
@@ -23,7 +23,7 @@ class collectd::plugin::write_graphite (
 
   file { '/opt/collectd-plugins/carbon_writer.py':
     ensure  => present,
-    source  => 'puppet://modules/collectd/carbon_writer.py'
+    source  => 'puppet://modules/collectd/carbon_writer.py',
     require => File['/opt/collectd-plugins'],
   }
 
