@@ -38,6 +38,10 @@ class collectd(
     notify  => Service['collectd'],
   }
 
+  file {'/opt/collectd-plugins':
+    ensure => directory,
+  }
+
   $conf_content = $purge_config ? {
     true    => template('collectd/collectd.conf.erb'),
     default => undef,

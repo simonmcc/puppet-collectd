@@ -17,10 +17,6 @@ class collectd::plugin::carbon_writer (
   validate_bool($separateinstances)
   validate_bool($logsenderrors)
 
-  file {'/opt/collectd-plugins':
-    ensure => directory,
-  }
-
   file { '/opt/collectd-plugins/carbon_writer.py':
     ensure  => present,
     source  => 'puppet:///modules/collectd/carbon_writer.py',

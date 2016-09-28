@@ -3,13 +3,6 @@ class collectd::plugin::squid (
   $ensure            = present,
 ) {
 
-  #ensure_resource('file', '/opt/collectd-plugins', {
-  #  ensure => directory,
-  #})
-  file {'/opt/collectd-plugins':
-    ensure => directory,
-  }
-
   file { '/opt/collectd-plugins/squid.sh':
     ensure  => present,
     source  => 'puppet:///modules/collectd/squid.sh',
